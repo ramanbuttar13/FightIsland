@@ -38,7 +38,7 @@
 	loader();
 
 	// Scrollax
-   $.Scrollax();
+//    $.Scrollax();
 
 
    var burgerMenu = function() {
@@ -141,7 +141,7 @@
 	var contentWayPoint = function() {
 		var i = 0;
 		$('.ftco-animate').waypoint( function( direction ) {
-
+			alert('hi');
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
 				
 				i++;

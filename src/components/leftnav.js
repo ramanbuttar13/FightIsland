@@ -6,6 +6,8 @@ class Leftnav extends Component {
     }
     render(){
         return(
+            <>
+            <a href="#" className="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
                 <aside id="colorlib-aside" role="complementary" className="js-fullheight">
                     <nav id="colorlib-main-menu" role="navigation">
                         <ul>
@@ -33,6 +35,7 @@ class Leftnav extends Component {
                         </p>
                     </div>
                 </aside>
+                </>
         )
     }
 }

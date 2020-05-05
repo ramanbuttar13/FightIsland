@@ -8,12 +8,13 @@ import Bloglist from './components/bloglist';
 
 const Test = () => {
   return (
-    <div className="outer-container">
+      <>
       <Header/>
       <Bloglist/>
-    </div>
+      <RightNav/>
+      </>
     
   )
 }
 
-ReactDOM.render(<Test/>,document.getElementById('root'));
+ReactDOM.render(<Test/>,document.getElementById('colorlib-page'));
