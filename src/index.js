@@ -9,6 +9,7 @@ import Fashion from './components/fashion';
 import About from './components/about';
 import Contact from './components/contact';
 import Travel from './components/travel';
+import CreateBlog from './components/create-blog';
 import ErrorComponent from './components/errorcomponent';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/about" component={About}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/travel" component={Travel}/>
+          <Route path="/create-blog" component={CreateBlog}/>
           <Route component={ErrorComponent}/>
         </Switch>
       </BrowserRouter>
