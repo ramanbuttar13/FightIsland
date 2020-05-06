@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 class Leftnav extends Component {
   state = {
@@ -17,20 +18,21 @@ class Leftnav extends Component {
         >
           <nav id="colorlib-main-menu" role="navigation">
             <ul>
+
               <li className="colorlib-active">
-                <a href="index.html">Home</a>
+                <Link to="/home">Home</Link>
               </li>
               <li>
-                <a href="fashion.html">Fashion</a>
+                <Link to="/fashion">Fashion</Link>
               </li>
               <li>
-                <a href="travel.html">Travel</a>
+                <Link to="/travel">Travel</Link>
               </li>
               <li>
-                <a href="about.html">About</a>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <a href="contact.html">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </nav>
