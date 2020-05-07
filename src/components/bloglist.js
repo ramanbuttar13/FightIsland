@@ -4,10 +4,16 @@ import axios from "axios";
 class Bloglist extends Component {
   constructor(props) {
     super(props);
+    this.getAllBlogs()
+    this.getBlog()
+  }
+
+  getAllBlogs(){
     axios
-      .get("https://jsonplaceholder.typicode.com/posts")
+      .get("https://5eb3eeeb974fee0016ecdd88.mockapi.io/blog")
       .then(function(response) {
         // handle success
+        console.log('all blogs')
         console.log(response);
       })
       .catch(function(error) {
@@ -18,6 +24,25 @@ class Bloglist extends Component {
         // always executed
       });
   }
+
+  getBlog(){
+    axios
+      .get("https://5eb3eeeb974fee0016ecdd88.mockapi.io/blog/2")
+      .then(function(response) {
+        // handle success
+        console.log('one blog')
+        console.log(response);
+      })
+      .catch(function(error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function() {
+        // always executed
+      });
+  }
+
+
   render() {
     return (
       <div id="colorlib-main">
