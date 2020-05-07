@@ -16,8 +16,10 @@ class CreateBlog extends Component {
             <div id="colorlib-main">
                 <section className="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
                     <div className="container-fluid px-0">
+
                     <Editor
                     />
+                    
                     </div>
                 </section>
             </div>
