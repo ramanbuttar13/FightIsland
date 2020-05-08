@@ -1,20 +1,30 @@
 import React, { Component } from "react";
 import axios from "axios";
+import ReadMoreReact from 'read-more-react';
 
 class Bloglist extends Component {
   constructor(props) {
     super(props);
-    this.getAllBlogs()
-    this.getBlog()
+    // this.state = {
+    //   blogs: this.getAllBlogs()
+    // }
   }
 
-  getAllBlogs(){
+    // this.getAllBlogs()
+    // this.getBlog()
+  state = {
+    blogs: []
+  };
+  componentDidMount() {
+    this.getAllBlogs();
+  }
+  getAllBlogs =() => {
     axios
       .get("https://5eb3eeeb974fee0016ecdd88.mockapi.io/blog")
-      .then(function(response) {
-        // handle success
-        console.log('all blogs')
-        console.log(response);
+      .then((response) => {
+        this.setState({
+          blogs: response.data.data
+        })
       })
       .catch(function(error) {
         // handle error
@@ -29,7 +39,6 @@ class Bloglist extends Component {
     axios
       .get("https://5eb3eeeb974fee0016ecdd88.mockapi.io/blog/2")
       .then(function(response) {
-        // handle success
         console.log('one blog')
         console.log(response);
       })
@@ -44,6 +53,55 @@ class Bloglist extends Component {
 
 
   render() {
+    const BlogData = this.state.blogs.map((item) => {
+      return(
+          <div className="col-md-12" key={item.id}>
+          <div className="blog-entry d-md-flex ftco-animate fadeInUp ftco-animated">
+            <a
+                href="#"
+                className="img img-2"
+                style={{
+                  backgroundImage: "url(" + "images/image_1.jpg" + ")"
+                }}
+              ></a>
+              <div className="text text-2 pl-md-4">
+                <h3 className="mb-2">
+                  <a href="#">{item.title}</a>
+                </h3>
+                <div className="meta-wrap">
+                  <p className="meta">
+                    <span>
+                      <i className="icon-calendar mr-2"></i>June 28,
+                      2019
+                    </span>
+                    <span>
+                      <a href="#">
+                        <i className="icon-folder-o mr-2"></i>Travel
+                      </a>
+                    </span>
+                    <span>
+                      <i className="icon-comment2 mr-2"></i>5 Comment
+                    </span>
+                  </p>
+                </div>
+                <p className="mb-4">
+                  <ReadMoreReact 
+                    text={item.content}
+                    readMoreText="" />
+                  
+                </p>
+                <p>
+                  <a href="#" className="btn-custom">
+                    Read More{" "}
+                    <span className="ion-ios-arrow-forward"></span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+      )}
+    )
+    
     return (
       <div id="colorlib-main">
         <section className="ftco-section ftco-no-pt ftco-no-pb">
@@ -51,6 +109,7 @@ class Bloglist extends Component {
             <div className="row d-flex">
               <div className="col-xl-8 py-5 px-md-5">
                 <div className="row pt-md-4">
+               { BlogData }
                   <div className="col-md-12">
                     <div className="blog-entry d-md-flex ftco-animate fadeInUp ftco-animated">
                       <a
