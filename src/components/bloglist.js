@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 import ReadMoreReact from 'read-more-react';
 
 class Bloglist extends Component {
@@ -22,6 +23,7 @@ class Bloglist extends Component {
     axios
       .get("https://5eb3eeeb974fee0016ecdd88.mockapi.io/blog")
       .then((response) => {
+        console.log(response)
         this.setState({
           blogs: response.data.data
         })
@@ -54,6 +56,7 @@ class Bloglist extends Component {
 
   render() {
     const BlogData = this.state.blogs.map((item) => {
+      
       return(
           <div className="col-md-12" key={item.id}>
           <div className="blog-entry d-md-flex ftco-animate fadeInUp ftco-animated">
@@ -66,7 +69,7 @@ class Bloglist extends Component {
               ></a>
               <div className="text text-2 pl-md-4">
                 <h3 className="mb-2">
-                  <a href="#">{item.title}</a>
+                  <a href={"home/"+item.id}>{item.title}</a>
                 </h3>
                 <div className="meta-wrap">
                   <p className="meta">
@@ -84,17 +87,22 @@ class Bloglist extends Component {
                     </span>
                   </p>
                 </div>
-                <p className="mb-4">
+                {/* This throws an error, so commenting for now */}
+                {/* <p className="mb-4">
                   <ReadMoreReact 
                     text={item.content}
                     readMoreText="" />
                   
-                </p>
+                </p> */}
                 <p>
-                  <a href="#" className="btn-custom">
+                  <Link to={"home/"+item.id} className="btn-custom">
+                  Read More{" "}
+                    <span className="ion-ios-arrow-forward"></span>
+                  </Link>
+                  {/* <a href="#" className="btn-custom">
                     Read More{" "}
                     <span className="ion-ios-arrow-forward"></span>
-                  </a>
+                  </a> */}
                 </p>
               </div>
             </div>

@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 //Components
 import Header from './components/header'
 import Home from './components/home';
+import Blog from './components/single-blog';
 import Fashion from './components/fashion';
 import About from './components/about';
 import Contact from './components/contact';
@@ -19,6 +20,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/home" exact component={Home}/>
+          <Route path="/home/:id" exact component={Blog}/>
           <Route path="/fashion" component={Fashion}/>
           <Route path="/about" component={About}/>
           <Route path="/contact" component={Contact}/>
