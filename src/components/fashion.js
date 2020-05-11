@@ -1,5 +1,6 @@
 import React from 'react';
-
+//Firebase connection done
+//import './firebase'
 //components
 
 const Fashion = () => {
