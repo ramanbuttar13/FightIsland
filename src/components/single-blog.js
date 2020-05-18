@@ -17,8 +17,8 @@ class Blog extends Component {
                 <div className="row d-flex">
                   <div className="col-lg-8 px-md-5 py-5">
                     <div className="row pt-md-4">
-                      <h1 className="mb-3">{this.state.blog.title}</h1>
-                      <p>{this.state.blog.content}</p>
+                      <h1 className="mb-3">{blog.title}</h1>
+                      <p>{blog.content}</p>
                       <p>
                         <img src="../images/image_1.jpg" alt="" className="img-fluid" />
                       </p>
@@ -284,7 +284,7 @@ class Blog extends Component {
         console.log(this.props)
         return(
           <div>
-              { this.blogTemplate(this.props.blogData) }
+              { this.blogTemplate(this.props.blog.blog) }
           </div>
           
     )
