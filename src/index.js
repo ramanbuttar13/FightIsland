@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore, applyMiddleware} from 'redux';
+import { Provider } from 'react-redux';
+import promiseMiddleware from 'redux-promise';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
+
+
+//Reducer
+import Reducers from './reducers'
 
 //Components
 import Header from './components/header'
@@ -32,5 +39,9 @@ const App = () => {
     
   )
 }
-
-ReactDOM.render(<App/>,document.getElementById('colorlib-page'));
+const Store = applyMiddleware(promiseMiddleware)(createStore);
+ReactDOM.render(
+  <Provider store={Store(Reducers)}>
+      <App/>
+  </Provider>
+,document.getElementById('colorlib-page'));

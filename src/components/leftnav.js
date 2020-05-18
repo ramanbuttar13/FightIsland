@@ -2,15 +2,8 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
 class Leftnav extends Component {
-  constructor(props) {
-    super(props);
-  }
-  state = {
-    keyword: "Hiiii"
-  };
   
   render() {
-    console.log(this.props)
     return (
       <>
         <a href="#" className="js-colorlib-nav-toggle colorlib-nav-toggle">
