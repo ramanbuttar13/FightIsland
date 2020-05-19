@@ -42,7 +42,7 @@
 
 
    var burgerMenu = function() {
-
+		
 		$('.js-colorlib-nav-toggle').on('click', function(event){
 			event.preventDefault();
 			var $this = $(this);

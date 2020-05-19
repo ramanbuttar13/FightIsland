@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
 class Leftnav extends Component {
-  state = {
-    keyword: "Hiiii"
-  };
+  
   render() {
     return (
       <>
